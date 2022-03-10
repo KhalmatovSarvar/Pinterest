@@ -32,7 +32,9 @@ class RecyclerHomeAdapter(var context: HomeFragment,
     }
 
     override fun getItemCount(): Int {
+        Log.d("TTT",items.size.toString())
         return items.size
+
     }
 
 
