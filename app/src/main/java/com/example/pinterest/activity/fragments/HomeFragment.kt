@@ -53,9 +53,12 @@ class HomeFragment : Fragment() {
            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                super.onScrolled(recyclerView, dx, dy)
                val into = intArrayOf(0,0)
-               val lastVisiblePosition = layoutManager.findLastVisibleItemPositions(into)
-               if(lastVisiblePosition[1] == layoutManager.itemCount-1||lastVisiblePosition[0] == layoutManager.itemCount-1)
+//               val lastVisiblePosition = layoutManager.findLastVisibleItemPositions(into)
+//               if(lastVisiblePosition[1] == layoutManager.itemCount-1||lastVisiblePosition[0] == layoutManager.itemCount-1)
+//                   getPhotosViaApi(++a)
+               if (!recyclerView.canScrollVertically(1)){
                    getPhotosViaApi(++a)
+               }
            }
        })
 

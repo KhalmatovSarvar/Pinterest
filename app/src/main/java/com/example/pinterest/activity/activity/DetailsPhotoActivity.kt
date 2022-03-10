@@ -26,15 +26,14 @@ class DetailsPhotoActivity : AppCompatActivity() {
 
     lateinit var imageView: ImageView
     lateinit var lottieAnimationView: LottieAnimationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_photo)
 
-
         supportPostponeEnterTransition()
         val extras = intent.extras
         val photoItem: PhotoHome = extras!!.getSerializable("photoTester") as PhotoHome
-
 
         Log.d("@@@",photoItem.toString())
 
