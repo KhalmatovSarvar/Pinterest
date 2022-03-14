@@ -34,16 +34,24 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-
+    }
+    fun replaceFragment(fragment: Fragment) {
+        val backStateName = fragment.javaClass.name
+        val manager = supportFragmentManager
+        val fragmentPopped = manager.popBackStackImmediate(backStateName, 0)
+        if (!fragmentPopped) {
+            val ft = manager.beginTransaction()
+            ft.replace(R.id.container, fragment)
+            ft.addToBackStack(backStateName)
+            ft.commit()
+        }
     }
 
-
-
-    private fun replaceFragment(fragment: Fragment){
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.view_pager, fragment)
-            commit()
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount == 1) {
+            finish()
+        } else {
+            super.onBackPressed()
         }
     }
 

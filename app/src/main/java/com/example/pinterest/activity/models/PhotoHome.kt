@@ -5,24 +5,24 @@ import java.io.Serializable
 
 data class PhotoHome (
     val id: String,
-    val createdAt: String,
-    val updatedAt: String,
+    val createdAt: String? = null,
+    val updatedAt: String? = null,
     val promotedAt: String? = null,
-    val width: Long,
-    val height: Long,
-    val color: String,
-    val blurHash: String,
+    val width: Long? = null,
+    val height: Long? = null,
+    val color: String? = null,
+    val blurHash: String? = null,
     val description: String? = null,
     val altDescription: Any? = null,
-    val urls: Urls,
-    val links: WelcomeLinks,
-    val categories: List<Any?>,
-    val likes: Long,
-    val likedByUser: Boolean,
-    val currentUserCollections: List<Any?>,
+    val urls: Urls? = null,
+    val links: WelcomeLinks? = null,
+    val categories: List<Any?>? = null,
+    val likes: Long? = null,
+    val likedByUser: Boolean? = null,
+    val currentUserCollections: List<Any?>? = null,
     val sponsorship: Sponsorship? = null,
-    val topicSubmissions: TopicSubmissions,
-    val user: User
+    val topicSubmissions: TopicSubmissions? = null,
+    val user: User? = null
 ):Serializable
 
 data class WelcomeLinks (
